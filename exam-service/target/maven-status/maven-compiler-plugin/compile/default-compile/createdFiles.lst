@@ -1,0 +1,13 @@
+com\example\exam_service\repository\QuestionRepository.class
+com\example\exam_service\model\Question$QuestionBuilder.class
+com\example\exam_service\model\Exam$ExamBuilder.class
+com\example\exam_service\ExamServiceApplication.class
+com\example\exam_service\model\Exam.class
+com\example\exam_service\model\ExamResult$ExamResultBuilder.class
+com\example\exam_service\model\ExamResult.class
+com\example\exam_service\model\QuestionType.class
+com\example\exam_service\repository\ExamRepository.class
+com\example\exam_service\model\Question.class
+com\example\exam_service\model\StudentAnswer$StudentAnswerBuilder.class
+com\example\exam_service\model\StudentAnswer.class
+com\example\exam_service\repository\StudentAnswerRepository.class

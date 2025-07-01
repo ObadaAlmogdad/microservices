@@ -1,0 +1,10 @@
+C:\stading\end-5th\5thend\se 2\D S\2025\Microservices\lms-microservices\exam-service\src\main\java\com\example\exam_service\ExamServiceApplication.java
+C:\stading\end-5th\5thend\se 2\D S\2025\Microservices\lms-microservices\exam-service\src\main\java\com\example\exam_service\model\Exam.java
+C:\stading\end-5th\5thend\se 2\D S\2025\Microservices\lms-microservices\exam-service\src\main\java\com\example\exam_service\model\ExamResult.java
+C:\stading\end-5th\5thend\se 2\D S\2025\Microservices\lms-microservices\exam-service\src\main\java\com\example\exam_service\model\Question.java
+C:\stading\end-5th\5thend\se 2\D S\2025\Microservices\lms-microservices\exam-service\src\main\java\com\example\exam_service\model\QuestionType.java
+C:\stading\end-5th\5thend\se 2\D S\2025\Microservices\lms-microservices\exam-service\src\main\java\com\example\exam_service\model\StudentAnswer.java
+C:\stading\end-5th\5thend\se 2\D S\2025\Microservices\lms-microservices\exam-service\src\main\java\com\example\exam_service\repository\ExamRepository.java
+C:\stading\end-5th\5thend\se 2\D S\2025\Microservices\lms-microservices\exam-service\src\main\java\com\example\exam_service\repository\ExamResultRepository.java
+C:\stading\end-5th\5thend\se 2\D S\2025\Microservices\lms-microservices\exam-service\src\main\java\com\example\exam_service\repository\QuestionRepository.java
+C:\stading\end-5th\5thend\se 2\D S\2025\Microservices\lms-microservices\exam-service\src\main\java\com\example\exam_service\repository\StudentAnswerRepository.java

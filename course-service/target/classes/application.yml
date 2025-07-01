@@ -1,0 +1,54 @@
+spring:
+  application:
+    name: course-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/course_db
+    username: root
+    password: ""
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+
+server:
+  port: 8082
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${server.port}
+
+# Resilience4j
+resilience4j:
+  circuitbreaker:
+    instances:
+      userClient:
+        sliding-window-size: 10
+        minimum-number-of-calls: 5
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 5000
+        permitted-number-of-calls-in-half-open-state: 3
+  retry:
+    instances:
+      userClient:
+        max-attempts: 3
+        wait-duration: 1000
+  timelimiter:
+    instances:
+      userClient:
+        timeout-duration: 3000
+
+jwt:
+  secret: "A1b2C3d4E5f6G7h8I9j0K1l2M3n4O5p6"
+  expiration: 86400000 
