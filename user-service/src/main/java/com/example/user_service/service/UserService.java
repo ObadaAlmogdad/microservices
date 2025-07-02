@@ -133,7 +133,11 @@ public class UserService {
     public UserResponseDto updateWallet(Long id, double amount) {
         User user = userRepository.findById(id)
                 .orElseThrow(() -> new UserNotFoundException(id));
-        user.setWallet(user.getWallet() + amount);
+        double newBalance = user.getWallet() + amount;
+        if (newBalance < 0) {
+            throw new IllegalArgumentException("Insufficient balance");
+        }
+        user.setWallet(newBalance);
         User updatedUser = userRepository.save(user);
         return convertToResponseDto(updatedUser);
     }

@@ -1,6 +1,7 @@
 package com.example.payment_service.service;
 
 import com.example.payment_service.client.UserClient;
+import com.example.payment_service.dto.ApiResponse;
 import com.example.payment_service.dto.UserDto;
 import com.example.payment_service.model.Transaction;
 import com.example.payment_service.model.TransactionType;
@@ -19,7 +20,8 @@ public class PaymentService {
 
     @Transactional
     public Transaction processPayment(Long userId, double amount, String description, String authorization) {
-        UserDto user = userClient.getUserById(userId, authorization);
+        ApiResponse<UserDto> response = userClient.getUserById(userId, authorization);
+        UserDto user = (response != null) ? response.getData() : null;
         if (user == null || user.getId() == null) {
             throw new IllegalArgumentException("User not found");
         }
@@ -36,7 +38,8 @@ public class PaymentService {
 
     @Transactional
     public Transaction processRefund(Long userId, double amount, String description, String authorization) {
-        UserDto user = userClient.getUserById(userId, authorization);
+        ApiResponse<UserDto> response = userClient.getUserById(userId, authorization);
+        UserDto user = (response != null) ? response.getData() : null;
         if (user == null || user.getId() == null) {
             throw new IllegalArgumentException("User not found");
         }
@@ -53,7 +56,8 @@ public class PaymentService {
 
     @Transactional
     public Transaction processCharge(Long userId, double amount, String description, String authorization) {
-        UserDto user = userClient.getUserById(userId, authorization);
+        ApiResponse<UserDto> response = userClient.getUserById(userId, authorization);
+        UserDto user = (response != null) ? response.getData() : null;
         if (user == null || user.getId() == null) {
             throw new IllegalArgumentException("User not found");
         }

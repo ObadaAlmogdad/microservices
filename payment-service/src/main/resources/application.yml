@@ -55,7 +55,16 @@ feign:
       default:
         connect-timeout: 5000
         read-timeout: 5000
+        loggerLevel: FULL
 
 jwt:
   secret: "A1b2C3d4E5f6G7h8I9j0K1l2M3n4O5p6"
-  expiration: 86400000 
+  expiration: 86400000
+
+logging:
+  level:
+    com.example.payment_service.client.UserClient: DEBUG
+    feign: DEBUG
+
+gateway:
+  url: http://localhost:8083 

@@ -6,6 +6,8 @@ import com.example.user_service.model.Role;
 import com.example.user_service.service.UserService;
 import com.example.user_service.config.JwtUtil;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
@@ -24,6 +26,7 @@ public class UserController {
 
     private final UserService userService;
     private final JwtUtil jwtUtil;
+    private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
     @PostMapping("/register")
     public ResponseEntity<ApiResponse<UserResponseDto>> register(@Valid @RequestBody UserRegistrationDto registrationDto) {
@@ -46,7 +49,7 @@ public class UserController {
                 .orElse(null);
         
         if (user != null && userService.validatePassword(loginDto.getPassword(), user.getPassword()) && user.isActive()) {
-            String token = jwtUtil.generateToken(user.getEmail(), user.getRole().name());
+            String token = jwtUtil.generateToken(user.getEmail(), user.getRole().name(), user.getId());
             
             LoginResponseDto response = LoginResponseDto.builder()
                     .token(token)
@@ -64,9 +67,11 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    @PreAuthorize("hasRole('ADMIN') or #id == authentication.principal")
+    @PreAuthorize("isAuthenticated()")
     public ResponseEntity<ApiResponse<UserResponseDto>> getUser(@PathVariable Long id) {
+        logger.info("[getUser] Requested id: {}", id);
         UserResponseDto user = userService.findById(id);
+        logger.info("[getUser] Result: {}", user);
         return ResponseEntity.ok(ApiResponse.success(user));
     }
 
@@ -164,7 +169,7 @@ public class UserController {
         return ResponseEntity.ok(ApiResponse.success("Admin added successfully", createdAdmin));
     }
 
-    @PatchMapping("/{id}/wallet")
+    @PutMapping("/{id}/wallet")
     @PreAuthorize("hasRole('ADMIN') or #id == authentication.principal")
     public ResponseEntity<ApiResponse<UserResponseDto>> updateWallet(@PathVariable Long id, @RequestParam double amount) {
         UserResponseDto user = userService.updateWallet(id, amount);

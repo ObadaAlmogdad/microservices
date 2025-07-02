@@ -15,6 +15,7 @@ public class FeignClientConfig {
             ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
             if (attributes != null) {
                 String authHeader = attributes.getRequest().getHeader("Authorization");
+                System.out.println("[FeignInterceptor] Authorization header: " + authHeader);
                 if (authHeader != null) {
                     template.header("Authorization", authHeader);
                 }

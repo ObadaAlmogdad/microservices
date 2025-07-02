@@ -29,7 +29,7 @@ public class SecurityConfig {
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/payments/pay",
-                "api/payments/pay").hasAnyRole("LEARNER", "USER", "ADMIN")
+                "/api/payments/pay").hasAnyRole("LEARNER", "USER", "ADMIN")
                 .anyRequest().authenticated()
             )
             .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
