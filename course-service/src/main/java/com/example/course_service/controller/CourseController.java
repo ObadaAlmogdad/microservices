@@ -5,6 +5,8 @@ import com.example.course_service.model.CourseStatus;
 import com.example.course_service.service.CourseService;
 import com.example.course_service.dto.ApiResponse;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -17,6 +19,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CourseController {
 
+    private static final Logger logger = LoggerFactory.getLogger(CourseController.class);
+
     @Autowired
     private final CourseService courseService;
 
@@ -28,9 +32,16 @@ public class CourseController {
 
     @GetMapping("/{id}")
     public ResponseEntity<ApiResponse<Course>> getCourse(@PathVariable Long id) {
+        logger.info("[getCourse] Requested id: {}", id);
         return courseService.findById(id)
-                .map(c -> ResponseEntity.ok(ApiResponse.success(c)))
-                .orElse(ResponseEntity.notFound().build());
+                .map(c -> {
+                    logger.info("[getCourse] Found course: {}", c);
+                    return ResponseEntity.ok(ApiResponse.success(c));
+                })
+                .orElseGet(() -> {
+                    logger.warn("[getCourse] Course not found for id: {}", id);
+                    return ResponseEntity.notFound().build();
+                });
     }
 
     @GetMapping

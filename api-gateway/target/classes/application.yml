@@ -35,7 +35,7 @@ spring:
         - id: exam-service
           uri: lb://exam-service
           predicates:
-            - Path=/api/exams/**
+            - Path=/api/exams/**, /api/courses/**, /api/users/**
           filters:
             - StripPrefix=0
 

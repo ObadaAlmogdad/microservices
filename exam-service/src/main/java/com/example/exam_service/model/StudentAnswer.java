@@ -18,6 +18,7 @@ public class StudentAnswer {
     private Long questionId;
     private String answer;
     private LocalDateTime submittedAt;
+    private String evaluation;
 
     @PrePersist
     protected void onCreate() {
