@@ -179,8 +179,8 @@ public class UserController {
     @GetMapping("/profile")
     public ResponseEntity<ApiResponse<UserResponseDto>> getCurrentUserProfile() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String email = authentication.getName();
-        UserResponseDto user = userService.findByEmail(email);
+        Long userId = (Long) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        UserResponseDto user = userService.findById(userId);
         return ResponseEntity.ok(ApiResponse.success(user));
     }
 }
