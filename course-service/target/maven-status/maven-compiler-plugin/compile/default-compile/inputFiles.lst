@@ -7,12 +7,15 @@ C:\stading\end-5th\5thend\se 2\D S\2025\Microservices\lms-microservices\course-s
 C:\stading\end-5th\5thend\se 2\D S\2025\Microservices\lms-microservices\course-service\src\main\java\com\example\course_service\controller\EnrollmentController.java
 C:\stading\end-5th\5thend\se 2\D S\2025\Microservices\lms-microservices\course-service\src\main\java\com\example\course_service\CourseServiceApplication.java
 C:\stading\end-5th\5thend\se 2\D S\2025\Microservices\lms-microservices\course-service\src\main\java\com\example\course_service\dto\ApiResponse.java
+C:\stading\end-5th\5thend\se 2\D S\2025\Microservices\lms-microservices\course-service\src\main\java\com\example\course_service\dto\CourseContentDto.java
 C:\stading\end-5th\5thend\se 2\D S\2025\Microservices\lms-microservices\course-service\src\main\java\com\example\course_service\dto\UserDto.java
 C:\stading\end-5th\5thend\se 2\D S\2025\Microservices\lms-microservices\course-service\src\main\java\com\example\course_service\exception\GlobalExceptionHandler.java
 C:\stading\end-5th\5thend\se 2\D S\2025\Microservices\lms-microservices\course-service\src\main\java\com\example\course_service\model\Course.java
+C:\stading\end-5th\5thend\se 2\D S\2025\Microservices\lms-microservices\course-service\src\main\java\com\example\course_service\model\CourseContent.java
 C:\stading\end-5th\5thend\se 2\D S\2025\Microservices\lms-microservices\course-service\src\main\java\com\example\course_service\model\CourseStatus.java
 C:\stading\end-5th\5thend\se 2\D S\2025\Microservices\lms-microservices\course-service\src\main\java\com\example\course_service\model\Enrollment.java
 C:\stading\end-5th\5thend\se 2\D S\2025\Microservices\lms-microservices\course-service\src\main\java\com\example\course_service\model\EnrollmentStatus.java
+C:\stading\end-5th\5thend\se 2\D S\2025\Microservices\lms-microservices\course-service\src\main\java\com\example\course_service\repository\CourseContentRepository.java
 C:\stading\end-5th\5thend\se 2\D S\2025\Microservices\lms-microservices\course-service\src\main\java\com\example\course_service\repository\CourseRepository.java
 C:\stading\end-5th\5thend\se 2\D S\2025\Microservices\lms-microservices\course-service\src\main\java\com\example\course_service\repository\EnrollmentRepository.java
 C:\stading\end-5th\5thend\se 2\D S\2025\Microservices\lms-microservices\course-service\src\main\java\com\example\course_service\service\CourseService.java

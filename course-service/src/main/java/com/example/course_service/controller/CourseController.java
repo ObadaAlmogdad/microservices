@@ -11,7 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import com.example.course_service.dto.CourseContentDto;
 import java.util.List;
 
 @RestController
@@ -144,5 +146,22 @@ public class CourseController {
     @GetMapping("/level/{level}")
     public ResponseEntity<ApiResponse<List<Course>>> getCoursesByLevel(@PathVariable String level) {
         return ResponseEntity.ok(ApiResponse.success(courseService.findByLevel(level)));
+    }
+
+    // رفع ملف جديد لمحتوى كورس (للمدرب فقط)
+    @PostMapping("/{courseId}/contents")
+    public CourseContentDto uploadCourseContent(
+            @PathVariable Long courseId,
+            @RequestParam("file") MultipartFile file,
+            @AuthenticationPrincipal Long userId
+    ) throws Exception {
+        // تحقق أن المستخدم هو صاحب الكورس يتم في الخدمة
+        return courseService.uploadCourseContent(courseId, file, userId);
+    }
+
+    // جلب كل محتويات كورس (متاح للجميع)
+    @GetMapping("/{courseId}/contents")
+    public List<CourseContentDto> getCourseContents(@PathVariable Long courseId) {
+        return courseService.getCourseContents(courseId);
     }
 } 

@@ -39,11 +39,17 @@ public class JwtFilter extends OncePerRequestFilter {
                         .build()
                         .parseSignedClaims(token)
                         .getPayload();
-                String email = claims.getSubject();
                 String role = claims.get("role", String.class);
-                if (email != null && role != null) {
+                Object userIdObj = claims.get("userId");
+                Long userId = null;
+                if (userIdObj instanceof Integer) {
+                    userId = ((Integer) userIdObj).longValue();
+                } else if (userIdObj instanceof Long) {
+                    userId = (Long) userIdObj;
+                }
+                if (userId != null && role != null) {
                     UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(
-                            email, null, Collections.singletonList(new SimpleGrantedAuthority("ROLE_" + role)));
+                            userId, null, Collections.singletonList(new SimpleGrantedAuthority("ROLE_" + role)));
                     SecurityContextHolder.getContext().setAuthentication(authentication);
                 }
             } catch (Exception e) {
