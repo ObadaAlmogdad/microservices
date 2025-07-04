@@ -1,0 +1,1864 @@
+{
+	"info": {
+		"_postman_id": "9e196c48-5def-45d8-ba9a-5876d42ffc4c",
+		"name": "elearning",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user service",
+			"item": [
+				{
+					"name": "add LEARNER",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"fullName\": \"l1\",\r\n  \"email\": \"l1@example.com\",\r\n  \"password\": \"123456\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add ADMIN",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJ1c2VySWQiOjEsInN1YiI6ImFkbWluQGxtcy5jb20iLCJpYXQiOjE3NTE1NDAwODEsImV4cCI6MTc1MTYyNjQ4MX0.hfMcbHV4FI7hRQCOUBL_zjXjWCpgNnDzoUQ5y-D8SM8",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"fullName\": \"a1\",\r\n  \"email\": \"a1@example.com\",\r\n  \"password\": \"123456\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/users/admin/add-admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"users",
+								"admin",
+								"add-admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add TRAINER by admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJ1c2VySWQiOjEsInN1YiI6ImFkbWluQGxtcy5jb20iLCJpYXQiOjE3NTE1NDAwODEsImV4cCI6MTc1MTYyNjQ4MX0.hfMcbHV4FI7hRQCOUBL_zjXjWCpgNnDzoUQ5y-D8SM8",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"fullName\": \"test\",\r\n  \"email\": \"test@example.com\",\r\n  \"password\": \"123456\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/users/admin/add-trainer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"users",
+								"admin",
+								"add-trainer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "log in",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"l1@example.com\",\r\n  \"password\": \"123456\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJ1c2VySWQiOjUsInN1YiI6ImFkbWluQGxtcy5jb20iLCJpYXQiOjE3NTE2MzM2NjksImV4cCI6MTc1MTcyMDA2OX0.8fmuDnO-s52XjsRmJHau7IM-E2b6cSpllfPgMrGGX1I",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8083/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all trainers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJ1c2VySWQiOjEsInN1YiI6ImFkbWluQGxtcy5jb20iLCJpYXQiOjE3NTE1NDAwODEsImV4cCI6MTc1MTYyNjQ4MX0.hfMcbHV4FI7hRQCOUBL_zjXjWCpgNnDzoUQ5y-D8SM8",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8083/api/users/trainers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"users",
+								"trainers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJ1c2VySWQiOjEsInN1YiI6ImFkbWluQGxtcy5jb20iLCJpYXQiOjE3NTE1NDA1MjcsImV4cCI6MTc1MTYyNjkyN30.Qu0vqHOFg5JnAQEqykm-F9GNDODQVEFTlD_C2v2qlj0",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8083/api/users/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"users",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJ1c2VySWQiOjEsInN1YiI6ImFkbWluQGxtcy5jb20iLCJpYXQiOjE3NTE1NDA1MjcsImV4cCI6MTc1MTYyNjkyN30.Qu0vqHOFg5JnAQEqykm-F9GNDODQVEFTlD_C2v2qlj0",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8083/api/users/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user (ADMIN or own user)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJ1c2VySWQiOjUsInN1YiI6ImFkbWluQGxtcy5jb20iLCJpYXQiOjE3NTE2MzM2NjksImV4cCI6MTc1MTcyMDA2OX0.8fmuDnO-s52XjsRmJHau7IM-E2b6cSpllfPgMrGGX1I",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"fullName\": \"admin test\",\r\n     \"email\": \"admin@test.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/users/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update wallet (ADMIN or own user)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJ1c2VySWQiOjEsInN1YiI6ImFkbWluQGxtcy5jb20iLCJpYXQiOjE3NTE1NDA1MjcsImV4cCI6MTc1MTYyNjkyN30.Qu0vqHOFg5JnAQEqykm-F9GNDODQVEFTlD_C2v2qlj0",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/users/1/wallet?amount=9.0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"users",
+								"1",
+								"wallet"
+							],
+							"query": [
+								{
+									"key": "amount",
+									"value": "9.0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Activate user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJ1c2VySWQiOjEsInN1YiI6ImFkbWluQGxtcy5jb20iLCJpYXQiOjE3NTE1NDA1MjcsImV4cCI6MTc1MTYyNjkyN30.Qu0vqHOFg5JnAQEqykm-F9GNDODQVEFTlD_C2v2qlj0",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"fullName\": \"for test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/users/1/activate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"users",
+								"1",
+								"activate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deactivate user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJ1c2VySWQiOjEsInN1YiI6ImFkbWluQGxtcy5jb20iLCJpYXQiOjE3NTE1NDA1MjcsImV4cCI6MTc1MTYyNjkyN30.Qu0vqHOFg5JnAQEqykm-F9GNDODQVEFTlD_C2v2qlj0",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"fullName\": \"for test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/users/1/deactivate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"users",
+								"1",
+								"deactivate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Course Service",
+			"item": [
+				{
+					"name": "New Folder",
+					"item": [
+						{
+							"name": "add new course contant",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVFJBSU5FUiIsInVzZXJJZCI6NCwic3ViIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTc1MTYzMDc5OSwiZXhwIjoxNzUxNzE3MTk5fQ.k_3gmIucsG4FX4-pv3r-h6OTO2UYSdIqJumnQ7M69iw",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/HP/Desktop/LIFE/1.png"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8083/api/courses/1/contents",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"courses",
+										"1",
+										"contents"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get cousre contant",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVFJBSU5FUiIsInVzZXJJZCI6NCwic3ViIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTc1MTYzMDc5OSwiZXhwIjoxNzUxNzE3MTk5fQ.k_3gmIucsG4FX4-pv3r-h6OTO2UYSdIqJumnQ7M69iw",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8083/api/courses/1/contents",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"courses",
+										"1",
+										"contents"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "add new course",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVFJBSU5FUiIsInVzZXJJZCI6NCwic3ViIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTc1MTU0MTUzMywiZXhwIjoxNzUxNjI3OTMzfQ.fF3vVjuq5OdYlrxTDvGyW0YYcySq1MUMR2FfRtjq5jU",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"it\",\r\n    \"description\": \"دورة تعليمية في أساسيات البرمجة\",\r\n    \"price\": 10,\r\n    \"trainerId\": 4,\r\n    \"category\": \"it\",\r\n    \"duration\": 20,\r\n    \"level\": \"BEGINNER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/courses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all course for user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVFJBSU5FUiIsInVzZXJJZCI6NCwic3ViIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTc1MTYzMDc5OSwiZXhwIjoxNzUxNzE3MTk5fQ.k_3gmIucsG4FX4-pv3r-h6OTO2UYSdIqJumnQ7M69iw",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8083/api/courses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/courses/{id}` : عرض تفاصيل كورس",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJ1c2VySWQiOjQxLCJzdWIiOiJ0ZXN0MUBleGFtcGxlLmNvbSIsImlhdCI6MTc1MTQ2MTIzMCwiZXhwIjoxNzUxNTQ3NjMwfQ.E3sbf1TVBClWzpDvApBPucE7ypk7VxHAfOgt3H2rH4A",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8083/api/courses/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"courses",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/courses/approved` : عرض الكورسات المعتمدة",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJBRE1JTjFAZXhhbXBsZS5jb20iLCJpYXQiOjE3NTEzMjg5MTMsImV4cCI6MTc1MTQxNTMxM30.tfp6Tu-akEAVFwJWJCgw2C5Ah7SJzlp3HwdCAlo-6co",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8083/api/courses/approved",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"courses",
+								"approved"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/courses/category/{category}` : عرض الكورسات حسب التصنيف",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVFJBSU5FUiIsInVzZXJJZCI6NCwic3ViIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTc1MTYzMDc5OSwiZXhwIjoxNzUxNzE3MTk5fQ.k_3gmIucsG4FX4-pv3r-h6OTO2UYSdIqJumnQ7M69iw",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8083/api/courses/category/it",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"courses",
+								"category",
+								"it"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/courses/level/{level}` : عرض الكورسات حسب المستوى",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVFJBSU5FUiIsInVzZXJJZCI6NCwic3ViIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTc1MTYzMDc5OSwiZXhwIjoxNzUxNzE3MTk5fQ.k_3gmIucsG4FX4-pv3r-h6OTO2UYSdIqJumnQ7M69iw",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8083/api/courses/level/BEGINNER",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"courses",
+								"level",
+								"BEGINNER"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "courses/rejected",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVFJBSU5FUiIsInVzZXJJZCI6NCwic3ViIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTc1MTYzMDc5OSwiZXhwIjoxNzUxNzE3MTk5fQ.k_3gmIucsG4FX4-pv3r-h6OTO2UYSdIqJumnQ7M69iw",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/courses/rejected",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"courses",
+								"rejected"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "approve the course",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJ1c2VySWQiOjUsInN1YiI6ImFkbWluQGxtcy5jb20iLCJpYXQiOjE3NTE2MzM2NjksImV4cCI6MTc1MTcyMDA2OX0.8fmuDnO-s52XjsRmJHau7IM-E2b6cSpllfPgMrGGX1I",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/courses/1/approve",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"courses",
+								"1",
+								"approve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "courses/pending` : عرض الكورسات المعلقة",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJ1c2VySWQiOjUsInN1YiI6ImFkbWluQGxtcy5jb20iLCJpYXQiOjE3NTE2MzM2NjksImV4cCI6MTc1MTcyMDA2OX0.8fmuDnO-s52XjsRmJHau7IM-E2b6cSpllfPgMrGGX1I",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/courses/pending",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"courses",
+								"pending"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reject the course",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJ1c2VySWQiOjUsInN1YiI6ImFkbWluQGxtcy5jb20iLCJpYXQiOjE3NTE1NDE4MDEsImV4cCI6MTc1MTYyODIwMX0.bVMEjlPnLXVn598e2cpBqprrB5SuSZ3RT9tkomZdd6w",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/courses/1/reject",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"courses",
+								"1",
+								"reject"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/courses/{id}/publish` : نشر كورس",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJ1c2VySWQiOjUsInN1YiI6ImFkbWluQGxtcy5jb20iLCJpYXQiOjE3NTE2MzM2NjksImV4cCI6MTc1MTcyMDA2OX0.8fmuDnO-s52XjsRmJHau7IM-E2b6cSpllfPgMrGGX1I",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"مقدمة في البرمجة\",\r\n    \"description\": \"دورة تعليمية في أساسيات البرمجة\",\r\n    \"price\": 99.99,\r\n    \"trainerId\": 1,\r\n    \"category\": \"برمجة\",\r\n    \"duration\": 20,\r\n    \"level\": \"BEGINNER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/courses/1/publish",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"courses",
+								"1",
+								"publish"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/courses/{id}` : تعديل كورس (أيضًا للأدمن)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJ1c2VySWQiOjUsInN1YiI6ImFkbWluQGxtcy5jb20iLCJpYXQiOjE3NTE1NDE4MDEsImV4cCI6MTc1MTYyODIwMX0.bVMEjlPnLXVn598e2cpBqprrB5SuSZ3RT9tkomZdd6w",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"it\",\r\n    \"description\": \"دورة تعليمية في أساسيات البرمجة\",\r\n    \"price\": 9.9,\r\n    \"trainerId\": 1,\r\n    \"category\": \"برمجة\",\r\n    \"duration\": 20,\r\n    \"level\": \"BEGINNER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/courses/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"courses",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE /api/courses/{id}` : حذف كورس (أيضًا للأدمن)",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVFJBSU5FUiIsInN1YiI6InRlc3Q5MzZAZXhhbXBsZS5jb20iLCJpYXQiOjE3NTEzMzI3NjQsImV4cCI6MTc1MTQxOTE2NH0.1qThrcfQQyUZIMTXKso1tsSonAxxnzu2RINFBetfRvY",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"مقدمة في البرمجة\",\r\n    \"description\": \"دورة تعليمية في أساسيات البرمجة\",\r\n    \"price\": 9.9,\r\n    \"trainerId\": 1,\r\n    \"category\": \"برمجة\",\r\n    \"duration\": 20,\r\n    \"level\": \"BEGINNER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/courses/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"courses",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/enrollments/enroll` : الاشتراك في كورس (مع الدفع)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiTEVBUk5FUiIsInVzZXJJZCI6Miwic3ViIjoibDFAZXhhbXBsZS5jb20iLCJpYXQiOjE3NTE2MzM4OTYsImV4cCI6MTc1MTcyMDI5Nn0.VXOiiYaKLER1AWxoamZCEnsGhDFiTFnOl4ttxtRei9A",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/enrollments/enroll?courseId=2&learnerId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"enrollments",
+								"enroll"
+							],
+							"query": [
+								{
+									"key": "courseId",
+									"value": "2"
+								},
+								{
+									"key": "learnerId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "pymant service",
+			"item": [
+				{
+					"name": "pay",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiTEVBUk5FUiIsInVzZXJJZCI6Miwic3ViIjoibDFAZXhhbXBsZS5jb20iLCJpYXQiOjE3NTE1NDIyMTAsImV4cCI6MTc1MTYyODYxMH0.v4PZaRBqifdLB0Xbzw3KmCKuCZ8NQ1hQ6aWa8VWXTFM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8083/api/payments/pay?userId=2&amount=9.9&description=Test",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"payments",
+								"pay"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "2"
+								},
+								{
+									"key": "amount",
+									"value": "9.9"
+								},
+								{
+									"key": "description",
+									"value": "Test"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refund",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiTEVBUk5FUiIsInVzZXJJZCI6MzIsInN1YiI6ImxAZXhhbXBsZS5jb20iLCJpYXQiOjE3NTE0NTgzNjcsImV4cCI6MTc1MTU0NDc2N30.aPnuaofFgecj2RVXt1S9Bv1uFLiZW4QhFw7CfclmMes",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8083/api/payments/refund?userId=2&amount=9.9&description=Test",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"payments",
+								"refund"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "2"
+								},
+								{
+									"key": "amount",
+									"value": "9.9"
+								},
+								{
+									"key": "description",
+									"value": "Test"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "charge",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiTEVBUk5FUiIsInVzZXJJZCI6Miwic3ViIjoibDFAZXhhbXBsZS5jb20iLCJpYXQiOjE3NTE1NDIyMTAsImV4cCI6MTc1MTYyODYxMH0.v4PZaRBqifdLB0Xbzw3KmCKuCZ8NQ1hQ6aWa8VWXTFM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8083/api/payments/charge?userId=2&amount=10&description=Test",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"payments",
+								"charge"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "2"
+								},
+								{
+									"key": "amount",
+									"value": "10"
+								},
+								{
+									"key": "description",
+									"value": "Test"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all payments",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiTEVBUk5FUiIsInVzZXJJZCI6Miwic3ViIjoibDFAZXhhbXBsZS5jb20iLCJpYXQiOjE3NTE1NDIyMTAsImV4cCI6MTc1MTYyODYxMH0.v4PZaRBqifdLB0Xbzw3KmCKuCZ8NQ1hQ6aWa8VWXTFM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8083/api/payments/user/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"payments",
+								"user",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "exam service",
+			"item": [
+				{
+					"name": "resalt",
+					"item": [
+						{
+							"name": "add results",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVFJBSU5FUiIsInVzZXJJZCI6MzcsInN1YiI6InRlc3Q5MzZAZXhhbXBsZS5jb20iLCJpYXQiOjE3NTE0NjQwMjIsImV4cCI6MTc1MTU1MDQyMn0.nFMrM6w9uug4KvbfKVO6oJLFBMKS5WEvG47micGpHNc",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\": \"1\",\r\n    \"examId\": \"1\",\r\n    \"score\": \"100\",\r\n    \"passed\": \"true\",\r\n    \"evaluatedAt\": \"2025-07-02T17:42:49.4349812\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8083/api/exams/results",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"exams",
+										"results"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update results",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVFJBSU5FUiIsInVzZXJJZCI6MzcsInN1YiI6InRlc3Q5MzZAZXhhbXBsZS5jb20iLCJpYXQiOjE3NTE0NjQwMjIsImV4cCI6MTc1MTU1MDQyMn0.nFMrM6w9uug4KvbfKVO6oJLFBMKS5WEvG47micGpHNc",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\": \"1\",\r\n    \"examId\": \"1\",\r\n    \"score\": \"99\",\r\n    \"passed\": \"true\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8083/api/exams/results/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"exams",
+										"results",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete results",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVFJBSU5FUiIsInVzZXJJZCI6MzcsInN1YiI6InRlc3Q5MzZAZXhhbXBsZS5jb20iLCJpYXQiOjE3NTE0NjQwMjIsImV4cCI6MTc1MTU1MDQyMn0.nFMrM6w9uug4KvbfKVO6oJLFBMKS5WEvG47micGpHNc",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\": \"1\",\r\n    \"examId\": \"1\",\r\n    \"score\": \"99\",\r\n    \"passed\": \"true\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8083/api/exams/results/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"exams",
+										"results",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "results",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVFJBSU5FUiIsInVzZXJJZCI6MzcsInN1YiI6InRlc3Q5MzZAZXhhbXBsZS5jb20iLCJpYXQiOjE3NTE0NjQwMjIsImV4cCI6MTc1MTU1MDQyMn0.nFMrM6w9uug4KvbfKVO6oJLFBMKS5WEvG47micGpHNc",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"courseId\":2,\r\n  \"title\": \"Final Exam\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8083/api/exams/results",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"exams",
+										"results"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "results by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVFJBSU5FUiIsInVzZXJJZCI6MzcsInN1YiI6InRlc3Q5MzZAZXhhbXBsZS5jb20iLCJpYXQiOjE3NTE0NjQwMjIsImV4cCI6MTc1MTU1MDQyMn0.nFMrM6w9uug4KvbfKVO6oJLFBMKS5WEvG47micGpHNc",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"courseId\":2,\r\n  \"title\": \"Final Exam\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8083/api/exams/results/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"exams",
+										"results",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "results for user",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVFJBSU5FUiIsInVzZXJJZCI6MzcsInN1YiI6InRlc3Q5MzZAZXhhbXBsZS5jb20iLCJpYXQiOjE3NTE0NjQwMjIsImV4cCI6MTc1MTU1MDQyMn0.nFMrM6w9uug4KvbfKVO6oJLFBMKS5WEvG47micGpHNc",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"courseId\":2,\r\n  \"title\": \"Final Exam\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8083/api/exams/results/user/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"exams",
+										"results",
+										"user",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "results for exam",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVFJBSU5FUiIsInVzZXJJZCI6MzcsInN1YiI6InRlc3Q5MzZAZXhhbXBsZS5jb20iLCJpYXQiOjE3NTE0NjQwMjIsImV4cCI6MTc1MTU1MDQyMn0.nFMrM6w9uug4KvbfKVO6oJLFBMKS5WEvG47micGpHNc",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"courseId\":2,\r\n  \"title\": \"Final Exam\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8083/api/exams/results/exam/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"exams",
+										"results",
+										"exam",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "add exam",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVFJBSU5FUiIsInVzZXJJZCI6MzcsInN1YiI6InRlc3Q5MzZAZXhhbXBsZS5jb20iLCJpYXQiOjE3NTE0NjQwMjIsImV4cCI6MTc1MTU1MDQyMn0.nFMrM6w9uug4KvbfKVO6oJLFBMKS5WEvG47micGpHNc",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"courseId\":1,\r\n  \"title\": \"Final Exam\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/exams",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"exams"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get exam for course",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVFJBSU5FUiIsInVzZXJJZCI6MzcsInN1YiI6InRlc3Q5MzZAZXhhbXBsZS5jb20iLCJpYXQiOjE3NTE0NjQwMjIsImV4cCI6MTc1MTU1MDQyMn0.nFMrM6w9uug4KvbfKVO6oJLFBMKS5WEvG47micGpHNc",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/exams/course/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"exams",
+								"course",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add questions",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVFJBSU5FUiIsInVzZXJJZCI6MzcsInN1YiI6InRlc3Q5MzZAZXhhbXBsZS5jb20iLCJpYXQiOjE3NTE0NjQwMjIsImV4cCI6MTc1MTU1MDQyMn0.nFMrM6w9uug4KvbfKVO6oJLFBMKS5WEvG47micGpHNc",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\": \"q1\",\r\n    \"type\": \"TEXT\",\r\n    \"options\": null,\r\n    \"correctAnswer\": \"q1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/exams/1/questions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"exams",
+								"1",
+								"questions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get questions",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVFJBSU5FUiIsInVzZXJJZCI6MzcsInN1YiI6InRlc3Q5MzZAZXhhbXBsZS5jb20iLCJpYXQiOjE3NTE0NjQwMjIsImV4cCI6MTc1MTU1MDQyMn0.nFMrM6w9uug4KvbfKVO6oJLFBMKS5WEvG47micGpHNc",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/exams/1/questions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"exams",
+								"1",
+								"questions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add answers for LEARNER",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiTEVBUk5FUiIsInVzZXJJZCI6Miwic3ViIjoibDFAZXhhbXBsZS5jb20iLCJpYXQiOjE3NTE1NDMxMzIsImV4cCI6MTc1MTYyOTUzMn0.1Wd1ay9ViixgQSom2L1i7aD2x_MhxXv7NeWWN0G-LPE",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"answer\": \"q1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/exams/questions/1/answers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"exams",
+								"questions",
+								"1",
+								"answers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "evaluate answers",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVFJBSU5FUiIsInVzZXJJZCI6MzcsInN1YiI6InRlc3Q5MzZAZXhhbXBsZS5jb20iLCJpYXQiOjE3NTE0NjQwMjIsImV4cCI6MTc1MTU1MDQyMn0.nFMrM6w9uug4KvbfKVO6oJLFBMKS5WEvG47micGpHNc",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n    \"evaluation\": \"t\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/exams/answers/1/evaluate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"exams",
+								"answers",
+								"1",
+								"evaluate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

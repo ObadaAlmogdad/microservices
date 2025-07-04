@@ -11,7 +11,7 @@
    - خدمة اكتشاف الخدمات وتسجيلها
    - تمكن الخدمات من العثور على بعضها البعض
 
-2. **API Gateway** - Port 8080
+2. **API Gateway** - Port 8083
    - بوابة موحدة لجميع الطلبات
    - توجيه الطلبات إلى الخدمات المناسبة
    - تطبيق Load Balancing
@@ -24,6 +24,13 @@
    - إدارة الدورات التعليمية
    - إدارة عمليات الاشتراك والتقدم
    - نظام الموافقة على الدورات
+
+5. **Payment Service** - Port 8084
+  - ادارة عمليات الدفع و الشحن و الاسترداد
+
+6. **Exam Service** - Port 8085
+  - ادارة للامتحانات و تفاصيلها
+
 
 ## المتطلبات
 
@@ -68,32 +75,9 @@ mvn spring-boot:run
 ```
 
 ## API Endpoints
+  -   postman collection تم اضافة 
+  -  :) يمكنك ان تجدها في في خذا المستودع 
 
-### User Service Endpoints (عبر Gateway: http://localhost:8081/api/users)
-- `POST /api/users/register` - تسجيل مستخدم جديد
-- `GET /api/users/{id}` - الحصول على مستخدم
-- `GET /api/users` - الحصول على جميع المستخدمين
-- `GET /api/users/trainers` - الحصول على جميع المدربين
-- `GET /api/users/learners` - الحصول على جميع المتعلمين
-- `POST /api/users/admin/add-trainer` - إضافة مدرب جديد
-- `PUT /api/users/{id}/activate` - تفعيل مستخدم
-- `PUT /api/users/{id}/deactivate` - إلغاء تفعيل مستخدم
-
-### Course Service Endpoints (عبر Gateway: http://localhost:8082/api/courses)
-- `POST /api/courses` - إنشاء دورة جديدة
-- `GET /api/courses/{id}` - الحصول على دورة
-- `GET /api/courses` - الحصول على جميع الدورات
-- `GET /api/courses/published` - الحصول على الدورات المنشورة
-- `GET /api/courses/trainer/{trainerId}` - الحصول على دورات مدرب
-- `PUT /api/courses/{id}/approve` - الموافقة على دورة
-- `PUT /api/courses/{id}/reject` - رفض دورة
-- `PUT /api/courses/{id}/publish` - نشر دورة
-
-### Enrollment Endpoints (عبر Gateway: http://localhost:8083/api/enrollments)
-- `POST /api/enrollments/enroll?courseId={id}&learnerId={id}` - الاشتراك في دورة
-- `GET /api/enrollments/learner/{learnerId}` - الحصول على اشتراكات متعلم
-- `PUT /api/enrollments/{id}/progress?progress={value}` - تحديث التقدم
-- `PUT /api/enrollments/{id}/complete?score={value}` - إكمال الدورة
 
 ## الميزات المطبقة
 
@@ -146,7 +130,7 @@ mvn spring-boot:run
 - يتم التحقق من الدور يدويًا في الـ API.
 
 ### 2. التوكن (Token)
-- عند تسجيل الدخول، يتم إرجاع توكن (UUID) يجب إرساله في كل طلب محمي.
+- عند تسجيل الدخول، يتم إرجاع توكن (jwt) يجب إرساله في كل طلب محمي.
 - التوكن يحدد هوية المستخدم وصلاحياته.
 
 ### 3. محفظة النقود
@@ -229,4 +213,4 @@ curl -X POST "http://localhost:8083/api/enrollments/enroll?courseId=1&learnerId=
 2. تأكد من تشغيل Eureka Server أولاً
 3. جميع الخدمات تستخدم نفس قاعدة البيانات `elearning`
 4. يمكن الوصول إلى Eureka Dashboard على http://localhost:8761
-5. جميع الطلبات تمر عبر API Gateway على http://localhost:8080 
+5. جميع الطلبات تمر عبر API Gateway على http://localhost:8083 
